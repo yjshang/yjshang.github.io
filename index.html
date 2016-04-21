@@ -259,30 +259,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="Android项目所遇到的坑"><a href="#Android项目所遇到的坑" class="headerlink" title="Android项目所遇到的坑"></a>Android项目所遇到的坑</h3><p><em>坑爹啊，刚用Markdown记录文字，语法之类的还不熟悉，而且不知道为啥我的hexo博客不能本地预览了，搞得我只能推送上传至github上再看效果，果然还是不熟悉。不过说实话，markdown确实强大。</em></p>
-<hr>
+              <h3 id="Android项目所遇到的坑"><a href="#Android项目所遇到的坑" class="headerlink" title="Android项目所遇到的坑"></a>Android项目所遇到的坑</h3><p><code>*坑爹啊，刚用Markdown记录文字，语法之类的还不熟悉，而且不知道为啥我的hexo博客不能本地预览了，搞得我只能推送上传至github上再看效果，果然还是不熟悉。不过说实话，markdown确实强大。*
+***</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>发现从搭建博客到现在居然还没有写过一篇技术文章，搭建博客说的分享技术白说了么（<em>捂脸哭..</em>）。所以，吓得我赶紧来着手写篇技术性文章。第一次撰写技术文（<em>好像很高大上的赶脚啊</em>），肯定很多不足，大家多包涵。</p>
-<p>怎么讲，从做项目到现在，遇到的问题也不少了，其中有已经解决了的，也有尚未解决的，也有正在解决中的。下面就我遇到的一些问题来谈谈自己的看法，还有自己是如何解决的过程，最后还有自己的一些思考。</p>
-<p>主界面：FrameLayout+RadioGroup，效果如下：上面就一个FrameLayout占位，下面是定义一个RadioGroup组包涵四个RadioButton。</p>
-<p><img src="http://7xslr6.com1.z0.glb.clouddn.com/453431fb-316b-4316-b20f-8cd8e51a9d67.jpg" alt=""></p>
-<p>FrameLayout</p>
-<p>RadioGroup</p>
-<p>layout_weight</p>
-<p>怎么去除RadioButton前面的小圆点：android:button = “@null”</p>
-<p>怎么让文字居中显示  ：  android:gravity = “center”</p>
-<p>gravity 与 layout_gravity的区别</p>
-<p><img src="http://7xslr6.com1.z0.glb.clouddn.com/eab50b9e-2fd7-413b-937a-2fa5a71ac0e2.png" alt=""></p>
-<p>难点1：碎片的制作：<br>步骤：定义一个碎片管理器manager  定义一个事务transaction<br><code>eg：private  FragmentManager  manager；//碎片管理器
-private   FragmentTransaction   transaction；//事务</code><br>然后在OnCreate方法中获取碎片管理器：   <code>manager = getFragmentManager（）；//得到碎片管理器</code></p>
-<p>然后就可以设置RadioGroup中button的点击事件了：        <code>radioGroup.setOnCheckedChangeListener（new ......）</code></p>
-<p>然后开始切换：<code>transaction  =  manager.beginTransaction();</code></p>
-<p>最后根据position来显示所触发显示的页面：swich<code>(position)..........case.......break;</code></p>
-<p>最后的最后：别忘记提交。。。<code>transaction.commit();//非常关键</code></p>
-<p>难点：关于怎么实现点击一个RadioButton然后显示相对应页面</p>
-<p>步骤：在fragment页面中定义一个adapter            然后在adapter中继承BaseAdapter，实现四个方法，在最关键的getview（）方法中去写想要加载到fragment中显示的控件与布局。</p>
-<p>这里要注意的是：gridview的整体布局文件还是获取在相对应的fragment中，adapter中获取的是gridview中显示单个控件的布局</p>
-<p>总结：还是得多写。     笔记也写的挺乱的，还需要提高理解能力</p>
-
+          
       
     </div>
     
@@ -299,6 +280,10 @@ private   FragmentTransaction   transaction；//事务</code><br>然后在OnCrea
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/烂笔头/">烂笔头</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2016/04/22/学习总结/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
